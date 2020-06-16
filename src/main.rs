@@ -1,7 +1,8 @@
-mod pointer;
+// mod pointer;
+mod structs;
 
 fn main() {
-    pointer::run();
+    structs::run();
 }
 
 // fn greet(greet: &str, name: &str) {
