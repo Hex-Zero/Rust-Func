@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="start-button">Start</button>
+
+    <script defer>
+      var prime = [];
+      var fillArray = (n) => {
+        for (let i = 0; i < n; i++) {
+          prime.push(true);
+        }
+      };
+      var findPrime = (n) => {
+        fillArray(n);
+        for (let p = 2; p * p <= n; p++) {
+          if (prime[p] == true) {
+            for (let i = p * p; i <= n; i += p) {
+              prime[i] = false;
+            }
+          }
+        }
+        console.log(prime);
+      };
+
+      var button = document.getElementById("start-button");
+      button.addEventListener("click", () => {
+        findPrime(30000000); // 15468
+      });
+    </script>
+  </body>
+</html>
